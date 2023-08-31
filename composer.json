@@ -1,17 +1,24 @@
 {
-    "name": "spatie/laravel-sitemap",
+    "name": "aldamr01/laravel-sitemap",
     "description": "Create and generate sitemaps with ease",
     "keywords": [
         "spatie",
+        "aldamr01",
         "laravel-sitemap"
     ],
-    "homepage": "https://github.com/spatie/laravel-sitemap",
+    "homepage": "https://github.com/aldamr01/laravel-sitemap",
     "license": "MIT",
     "authors": [
         {
             "name": "Freek Van der Herten",
             "email": "freek@spatie.be",
             "homepage": "https://spatie.be",
+            "role": "Developer"
+        },
+        {
+            "name": "Aldion",
+            "email": "aldionamirrul@gmail.com",
+            "homepage": "https://aldion.dev",
             "role": "Developer"
         }
     ],
