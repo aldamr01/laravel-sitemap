@@ -49,18 +49,18 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Sitemap\\SitemapServiceProvider"
+                "Aldamr01\\Sitemap\\SitemapServiceProvider"
             ]
         }
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Sitemap\\": "src"
+            "Aldamr01\\Sitemap\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Sitemap\\Test\\": "tests"
+            "Aldamr01\\Sitemap\\Test\\": "tests"
         }
     },
     "minimum-stability": "dev",
