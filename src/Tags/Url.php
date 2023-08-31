@@ -17,11 +17,11 @@ class Url extends Tag
 
     public string $url;
 
-    public Carbon $lastModificationDate;
+    public mixed $lastModificationDate = null;
 
-    public string $changeFrequency;
+    public mixed $changeFrequency = null;
 
-    public float $priority = 0.8;
+    public mixed $priority = null;
 
     /** @var \Spatie\Sitemap\Tags\Alternate[] */
     public array $alternates = [];
@@ -65,7 +65,7 @@ class Url extends Tag
         return $this;
     }
 
-    public function setPriority(float $priority): static
+    public function setPriority(float $priority = 0.8): static
     {
         $this->priority = max(0, min($priority, 1));
 
@@ -82,6 +82,13 @@ class Url extends Tag
     public function addImage(string $url, string $caption = '', string $geo_location = '', string $title = '', string $license = ''): static
     {
         $this->images[] = new Image($url, $caption, $geo_location, $title, $license);
+
+        return $this;
+    }
+
+    public function addNews(string $title, string $publication_date): static
+    {
+        $this->news[] = new News($title, $publication_date);
 
         return $this;
     }
