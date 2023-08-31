@@ -3,7 +3,7 @@
 This package can generate a sitemap without you having to add urls to it manually. This works by crawling your entire site.
 
 ```php
-use Spatie\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\SitemapGenerator;
 
 SitemapGenerator::create('https://example.com')->writeToFile($path);
 ```
@@ -12,8 +12,8 @@ You can also create your sitemap manually:
 
 ```php
 use Carbon\Carbon;
-use Spatie\Sitemap\Sitemap;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\Sitemap;
+use Aldamr01\Sitemap\Tags\Url;
 
 Sitemap::create()
 
@@ -61,8 +61,8 @@ SitemapGenerator::create('https://example.com')->getSitemap()->writeToDisk('publ
 You can also add your models directly by implementing the `\Spatie\Sitemap\Contracts\Sitemapable` interface.
 
 ```php
-use Spatie\Sitemap\Contracts\Sitemapable;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\Contracts\Sitemapable;
+use Aldamr01\Sitemap\Tags\Url;
 
 class Post extends Model implements Sitemapable
 {
@@ -79,7 +79,7 @@ class Post extends Model implements Sitemapable
 
 Now you can add a single post model to the sitemap or even a whole collection.
 ```php
-use Spatie\Sitemap\Sitemap;
+use Aldamr01\Sitemap\Sitemap;
 
 Sitemap::create()
     ->add($post)
@@ -120,7 +120,7 @@ This will copy the default config to `config/sitemap.php` where you can edit it.
 
 ```php
 use GuzzleHttp\RequestOptions;
-use Spatie\Sitemap\Crawler\Profile;
+use Aldamr01\Sitemap\Crawler\Profile;
 
 return [
 
@@ -216,7 +216,7 @@ The generated sitemap will look similar to this:
 You can create a custom crawl profile by implementing the `Spatie\Crawler\CrawlProfiles\CrawlProfile` interface and by customizing the `shouldCrawl()` method for full control over what url/domain/sub-domain should be crawled:
 
 ```php
-use Spatie\Crawler\CrawlProfiles\CrawlProfile;
+use Aldamr01\Crawler\CrawlProfiles\CrawlProfile;
 use Psr\Http\Message\UriInterface;
 
 class CustomCrawlProfile extends CrawlProfile
@@ -252,8 +252,8 @@ To change the `lastmod`, `changefreq` and `priority` of the contact page:
 
 ```php
 use Carbon\Carbon;
-use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\Tags\Url;
 
 SitemapGenerator::create('https://example.com')
    ->hasCrawled(function (Url $url) {
@@ -272,8 +272,8 @@ SitemapGenerator::create('https://example.com')
 If you don't want a crawled link to appear in the sitemap, just don't return it in the callable you pass to `hasCrawled `.
 
 ```php
-use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\Tags\Url;
 
 SitemapGenerator::create('https://example.com')
    ->hasCrawled(function (Url $url) {
@@ -292,7 +292,7 @@ You can also instruct the underlying crawler to not crawl some pages by passing 
 **Note:** `shouldCrawl` will only work with the default crawl `Profile` or custom crawl profiles that implement a `shouldCrawlCallback` method. 
  
 ```php
-use Spatie\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\SitemapGenerator;
 use Psr\Http\Message\UriInterface;
 
 SitemapGenerator::create('https://example.com')
@@ -325,7 +325,7 @@ SitemapGenerator::create('http://localhost:4020')
 You can limit the amount of pages crawled by calling `setMaximumCrawlCount`
 
 ```php
-use Spatie\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\SitemapGenerator;
 
 SitemapGenerator::create('https://example.com')
     ->setMaximumCrawlCount(500) // only the 500 first pages will be crawled
@@ -346,8 +346,8 @@ The package will make an educated guess as to where Chrome is installed on your 
 You can manually add links to a sitemap:
 
 ```php
-use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\Tags\Url;
 
 SitemapGenerator::create('https://example.com')
     ->getSitemap()
@@ -361,8 +361,8 @@ SitemapGenerator::create('https://example.com')
 Multilingual sites may have several alternate versions of the same page (one per language). Based on the previous example adding an alternate can be done as follows:
 
 ```php
-use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\Tags\Url;
 
 SitemapGenerator::create('https://example.com')
     ->getSitemap()
@@ -378,8 +378,8 @@ Note the ```addAlternate``` function which takes an alternate URL and the locale
 Urls can also have images. See also https://developers.google.com/search/docs/advanced/sitemaps/image-sitemaps
 
 ```php
-use Spatie\Sitemap\Sitemap;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\Sitemap;
+use Aldamr01\Sitemap\Tags\Url;
 
 Sitemap::create()
     // here we add an image to a URL
@@ -394,8 +394,8 @@ As well as images, videos can be wrapped by URL tags. See https://developers.goo
 You can set required attributes like so:
 
 ```php
-use Spatie\Sitemap\Sitemap;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\Sitemap;
+use Aldamr01\Sitemap\Tags\Url;
 
 Sitemap::create()
     ->add(
@@ -408,9 +408,9 @@ Sitemap::create()
 If you want to pass the optional parameters like `family_friendly`, `live`, or `platform`:
 
 ```php
-use Spatie\Sitemap\Sitemap;
-use Spatie\Sitemap\Tags\Url;
-use Spatie\Sitemap\Tags\Video;
+use Aldamr01\Sitemap\Sitemap;
+use Aldamr01\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\Tags\Video;
 
 
 $options = ['family_friendly' => Video::OPTION_YES, 'live' => Video::OPTION_NO];
@@ -442,7 +442,7 @@ Sitemap::create()
 ### Creating a sitemap index
 You can create a sitemap index:
 ```php
-use Spatie\Sitemap\SitemapIndex;
+use Aldamr01\Sitemap\SitemapIndex;
 
 SitemapIndex::create()
     ->add('/pages_sitemap.xml')
@@ -453,8 +453,8 @@ SitemapIndex::create()
 You can pass a `Spatie\Sitemap\Tags\Sitemap` object to manually set the `lastModificationDate` property.
 
 ```php
-use Spatie\Sitemap\SitemapIndex;
-use Spatie\Sitemap\Tags\Sitemap;
+use Aldamr01\Sitemap\SitemapIndex;
+use Aldamr01\Sitemap\Tags\Sitemap;
 
 SitemapIndex::create()
     ->add('/pages_sitemap.xml')
@@ -485,7 +485,7 @@ You can call the `maxTagsPerSitemap` method to generate a
 sitemap that only contains the given amount of tags
 
 ```php
-use Spatie\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\SitemapGenerator;
 
 SitemapGenerator::create('https://example.com')
     ->maxTagsPerSitemap(20000)
@@ -503,7 +503,7 @@ You could set up an artisan command much like this one:
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Spatie\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\SitemapGenerator;
 
 class GenerateSitemap extends Command
 {
