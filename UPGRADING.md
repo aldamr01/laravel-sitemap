@@ -1,6 +1,6 @@
 # Upgrading
 
-## From 6.0 to 6.1
+## From 6.0 to 7.0
 
 Add News sitemap feature, and make `changeFreq`, `lastMod`, and `priority` attributes nullable. 
 
