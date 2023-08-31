@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Sitemap\Crawler;
+namespace Aldamr01\Sitemap\Crawler;
 
 use GuzzleHttp\Exception\RequestException;
 use Psr\Http\Message\ResponseInterface;

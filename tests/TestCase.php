@@ -1,9 +1,9 @@
 <?php
 
-namespace Spatie\Sitemap\Test;
+namespace Aldamr01\Sitemap\Test;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Spatie\Sitemap\SitemapServiceProvider;
+use Aldamr01\Sitemap\SitemapServiceProvider;
 
 abstract class TestCase extends OrchestraTestCase
 {

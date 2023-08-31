@@ -1,18 +1,18 @@
 <?php
 
-namespace Spatie\Sitemap;
+namespace Aldamr01\Sitemap;
 
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Contracts\Support\Responsable;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
-use Spatie\Sitemap\Contracts\Sitemapable;
-use Spatie\Sitemap\Tags\Tag;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\Contracts\Sitemapable;
+use Aldamr01\Sitemap\Tags\Tag;
+use Aldamr01\Sitemap\Tags\Url;
 
 class Sitemap implements Responsable, Renderable
 {
-    /** @var \Spatie\Sitemap\Tags\Url[] */
+    /** @var \Aldamr01\Sitemap\Tags\Url[] */
     protected array $tags = [];
 
     public static function create(): static

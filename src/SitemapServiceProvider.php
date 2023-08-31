@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Sitemap;
+namespace Aldamr01\Sitemap;
 
 use Spatie\Crawler\Crawler;
 use Spatie\LaravelPackageTools\Package;

@@ -1,6 +1,6 @@
 <?php
 
-use Spatie\Sitemap\Tags\Alternate;
+use Aldamr01\Sitemap\Tags\Alternate;
 
 beforeEach(function () {
     $this->alternate = new Alternate('defaultUrl', 'en');

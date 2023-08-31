@@ -1,8 +1,8 @@
 <?php
 
-namespace Spatie\Sitemap\Contracts;
+namespace Aldamr01\Sitemap\Contracts;
 
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\Tags\Url;
 
 interface Sitemapable
 {

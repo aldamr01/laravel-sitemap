@@ -1,7 +1,7 @@
 <?php
 
-use Spatie\Sitemap\Sitemap;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\Sitemap;
+use Aldamr01\Sitemap\Tags\Url;
 
 test('XML has image', function () {
     $expected_xml = '<?xml version="1.0" encoding="UTF-8"?>

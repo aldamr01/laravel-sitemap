@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Sitemap\Tags;
+namespace Aldamr01\Sitemap\Tags;
 
 class News
 {

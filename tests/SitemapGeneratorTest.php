@@ -2,9 +2,9 @@
 
 use Psr\Http\Message\UriInterface;
 use Spatie\Crawler\Crawler;
-use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Tags\Url;
-use Spatie\Sitemap\Test\CustomCrawlProfile;
+use Aldamr01\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\Test\CustomCrawlProfile;
 
 use function Spatie\Snapshots\assertMatchesXmlSnapshot;
 

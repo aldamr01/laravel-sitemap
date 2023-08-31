@@ -1,8 +1,8 @@
 <?php
 
 use Carbon\Carbon;
-use Spatie\Sitemap\Tags\Alternate;
-use Spatie\Sitemap\Tags\Url;
+use Aldamr01\Sitemap\Tags\Alternate;
+use Aldamr01\Sitemap\Tags\Url;
 
 beforeEach(function () {
     $this->now = Carbon::now();
