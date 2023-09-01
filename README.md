@@ -356,6 +356,20 @@ SitemapGenerator::create('https://example.com')
     ->writeToFile($sitemapPath);
 ```
 
+#### Adding CData Attribute in <loc> and few XML tag
+
+By default, CData attribute is disabled, you can enable it by adding `setCdata()` in `URL::class` like this:
+
+```php
+use Aldamr01\Sitemap\SitemapGenerator;
+use Aldamr01\Sitemap\Tags\Url;
+
+SitemapGenerator::create('https://example.com')
+    ->getSitemap()
+    ->add(Url::create('/extra-page')->setCdata())
+    ->writeToFile($sitemapPath);
+```
+
 #### Adding alternates to links
 
 Multilingual sites may have several alternate versions of the same page (one per language). Based on the previous example adding an alternate can be done as follows:
@@ -384,6 +398,40 @@ use Aldamr01\Sitemap\Tags\Url;
 Sitemap::create()
     // here we add an image to a URL
     ->add(Url::create('https://example.com')->addImage('https://example.com/images/home.jpg', 'Home page image'))
+    ->writeToFile($sitemapPath);
+```
+
+#### Adding multiple images to links
+
+Urls can also have multiple images. See also https://developers.google.com/search/docs/advanced/sitemaps/image-sitemaps
+
+```php
+use Aldamr01\Sitemap\Sitemap;
+use Aldamr01\Sitemap\Tags\Url;
+
+Sitemap::create()
+    // here we add an image to a URL
+    ->add(Url::create('https://example.com')
+        ->addImage('https://example.com/images/home.jpg', 'Home page image')
+        ->addImage('https://example.com/images/home2.jpg', 'Home page image')
+        ->addImage('https://example.com/images/home3.jpg', 'Home page image')
+    )
+    ->writeToFile($sitemapPath);
+```
+
+#### Adding news to links
+
+Urls can also have news. See also https://developers.google.com/search/docs/advanced/sitemaps/news-sitemaps
+
+```php
+use Aldamr01\Sitemap\Sitemap;
+use Aldamr01\Sitemap\Tags\Url;
+
+Sitemap::create()
+    // here we add an image to a URL
+    ->add(Url::create('https://example.com')
+        ->addNews('https://example.com/images/home.jpg', '27-10-2023 11:11:11')        
+    )
     ->writeToFile($sitemapPath);
 ```
 
