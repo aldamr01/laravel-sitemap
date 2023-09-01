@@ -13,7 +13,7 @@ class News
         return new static($title, $publication_date);
     }
 
-    public function __construct(string $title, string $pub)
+    public function __construct(string $title, string $publication_date)
     {
         $this->setTitle($title);
 
@@ -29,7 +29,7 @@ class News
 
     public function setPublicationDate(string $publication_date = ''): static
     {
-        $this->publication$publication_date = $publication_date;
+        $this->publication_date = $publication_date;
 
         return $this;
     }

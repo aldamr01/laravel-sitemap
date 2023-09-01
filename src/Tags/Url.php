@@ -23,6 +23,8 @@ class Url extends Tag
 
     public mixed $priority = null;
 
+    public bool $cData = false;
+
     /** @var \Spatie\Sitemap\Tags\Alternate[] */
     public array $alternates = [];
 
@@ -32,6 +34,9 @@ class Url extends Tag
     /** @var \Spatie\Sitemap\Tags\Video[] */
     public array $videos = [];
 
+    /** @var \Spatie\Sitemap\Tags\Video[] */
+    public array $news = [];
+
     public static function create(string $url): static
     {
         return new static($url);
@@ -40,8 +45,6 @@ class Url extends Tag
     public function __construct(string $url)
     {
         $this->url = $url;
-
-        $this->changeFrequency = static::CHANGE_FREQUENCY_DAILY;
     }
 
     public function setUrl(string $url = ''): static
@@ -72,6 +75,14 @@ class Url extends Tag
         return $this;
     }
 
+    public function setCdata(bool $cData = false): static
+    {
+        $this->cData = $cData;
+
+        return $this;
+    }
+
+
     public function addAlternate(string $url, string $locale = ''): static
     {
         $this->alternates[] = new Alternate($url, $locale);
@@ -86,9 +97,9 @@ class Url extends Tag
         return $this;
     }
 
-    public function addNews(string $title, string $publication_date): static
+    public function addNews(string $title, DateTimeInterface $publication_date): static
     {
-        $this->news[] = new News($title, $publication_date);
+        $this->news[] = new News($title, Carbon::instance($publication_date));
 
         return $this;
     }

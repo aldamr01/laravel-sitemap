@@ -7,6 +7,6 @@
         <news:publication_date>{{ $news->publication_date }}</news:publication_date>
     @endif
     @if (! empty($news->title))
-        <news:title><![CDATA {{ $news->title }} ]></news:title>
+        <news:title><![CDATA[ {{ $news->title }} ]]></news:title>
     @endif
 </news:news>
