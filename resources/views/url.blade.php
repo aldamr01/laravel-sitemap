@@ -1,7 +1,7 @@
 <url>
     @if (! empty($tag->url))
     @if($tag->cData)
-    <loc> <![CDATA[ {{ url($tag->url) }} ]]> </loc>
+<loc> <![CDATA[ {{ url($tag->url) }} ]]> </loc>
     @else
     <loc>{{ url($tag->url) }}</loc>
     @endif
