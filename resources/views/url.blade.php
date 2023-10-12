@@ -20,7 +20,6 @@
     @if (! empty($tag->priority))
         <priority>{{ number_format($tag->priority,1) }}</priority>
     @endif
-
     @each('sitemap::image', $tag->images, 'image')
     @each('sitemap::news', $tag->news, 'news')
     @each('sitemap::video', $tag->videos, 'video')
