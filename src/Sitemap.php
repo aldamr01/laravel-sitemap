@@ -15,6 +15,8 @@ class Sitemap implements Responsable, Renderable
     /** @var \Aldamr01\Sitemap\Tags\Url[] */
     protected array $tags = [];
 
+    protected string $mode = 'default';
+
     public static function create(): static
     {
         return new static();
@@ -48,6 +50,11 @@ class Sitemap implements Responsable, Renderable
     public function getTags(): array
     {
         return $this->tags;
+    }
+
+    public function setMode(string $mode): string
+    {
+        return $this->mode = $mode;
     }
 
     public function getUrl(string $url): ?Url
