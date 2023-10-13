@@ -4,7 +4,7 @@
                 <news:language>{{ config('sitemap.language', 'id') }}</news:language>
             </news:publication>
     @if (! empty($news->publication_date))
-        <news:publication_date>{{ $news->publication_date->format(DateTime::ATOM) }}</news:publication_date>
+        <news:publication_date>{{ $news->publication_date }}</news:publication_date>
     @endif
 @if (! empty($news->title))
         <news:title><![CDATA[ {{ $news->title }} ]]></news:title>

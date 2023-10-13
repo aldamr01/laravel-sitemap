@@ -4,6 +4,7 @@ namespace Aldamr01\Sitemap\Tags;
 
 use Carbon\Carbon;
 use DateTimeInterface;
+use DateTime;
 
 class Url extends Tag
 {
@@ -99,7 +100,8 @@ class Url extends Tag
 
     public function addNews(string $title, DateTimeInterface $publication_date): static
     {
-        $this->news[] = new News($title, Carbon::instance($publication_date));
+        $publication_date = Carbon::parse($publication_date);
+        $this->news[] = new News($title, $publication_date->format(DateTime::ATOM));
 
         return $this;
     }
